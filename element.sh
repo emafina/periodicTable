@@ -26,7 +26,7 @@ if [[ -z $DATA ]]
 then
   echo "I could not find that element in the database." 
 else
-  echo $DATA
-  echo $DATA | (read NUM BAR SYM BAR NAME BAR MASS BAR MP BAR BP BAR TYPE)
+  read NUM BAR SYM BAR NAME BAR MASS BAR MP BAR BP BAR TYPE < <(echo $DATA)
+  #echo $DATA | (read NUM BAR SYM BAR NAME BAR MASS BAR MP BAR BP BAR TYPE)
   echo "The element with atomic number $NUM is $NAME ($SYM). It'a $TYPE, with mass of $MASS amu. $NAME has a melting point of $MP celsius and a boiling point of $BP celsius."
 fi
