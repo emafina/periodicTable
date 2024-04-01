@@ -21,12 +21,12 @@ else
       fi
     done
   fi
-fi
-if [[ -z $DATA ]]
-then
-  echo "I could not find that element in the database." 
-else
-  read NUM BAR SYM BAR NAME BAR MASS BAR MP BAR BP BAR TYPE < <(echo $DATA)
-  #echo $DATA | (read NUM BAR SYM BAR NAME BAR MASS BAR MP BAR BP BAR TYPE)
-  echo "The element with atomic number $NUM is $NAME ($SYM). It'a $TYPE, with mass of $MASS amu. $NAME has a melting point of $MP celsius and a boiling point of $BP celsius."
+  if [[ -z $DATA ]]
+  then
+    echo "I could not find that element in the database." 
+  else
+    read NUM BAR SYM BAR NAME BAR MASS BAR MP BAR BP BAR TYPE < <(echo $DATA)
+    #echo $DATA | (read NUM BAR SYM BAR NAME BAR MASS BAR MP BAR BP BAR TYPE)
+    echo "The element with atomic number $NUM is $NAME ($SYM). It's a $TYPE, with a mass of $MASS amu. $NAME has a melting point of $MP celsius and a boiling point of $BP celsius."
+  fi
 fi
